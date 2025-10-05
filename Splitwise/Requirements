@@ -1,0 +1,40 @@
+Create an expense sharing application.
+
+An expense sharing application is where you can add your expenses and split it among different people.
+The app keeps balances between people as in who owes how much to whom.
+
+Api
+/register -> (User);
+/addFriends -> (List<userId>);
+/split -> equal, percent, ratio, manual. option to add friends to split with, add notes
+/showExpense /{userId}->
+/history/{userId}
+
+
+User{
+    userId
+    name
+    phone
+    email
+    balance
+    List<User> friends
+}
+
+enum SplitType {
+    EQUAL,
+    PERCENT,
+    RATIO,
+    MANUAL
+}
+
+Expense{
+    expenseId
+    User paidBy
+    int amount
+    HashMap<User, int> cashSpent
+}
+
+History{
+    historyId
+    List<Expense> expenses
+}

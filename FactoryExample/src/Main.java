@@ -1,11 +1,10 @@
-import impl.Android;
-import impl.OSFactory;
-import interfaces.OS;
+import impl.RouteSelectorFactory;
+import interfaces.RouteSelector;
 
 public class Main {
     public static void main(String[] args) {
-        OSFactory factory = new OSFactory();
-        OS os = factory.getInstance("Ios");
-        os.spec();
+        RouteSelectorFactory factory = new RouteSelectorFactory();
+        RouteSelector routeSelector = factory.getInstance("D");
+        routeSelector.getRoute();
     }
 }
